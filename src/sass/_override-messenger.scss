@@ -1,0 +1,279 @@
+// Copied from https://github.com/tomgenoni/ouroboros
+// But with the class names changed
+// File: https://raw.github.com/tomgenoni/ouroboros/master/sass/_ui-spinner.scss
+
+// # CSS Spinner
+// Optional 6 parameters for mixin 'ui-spinner'.
+// Defaults are as follows.
+
+$default-hole-color: transparent;
+$default-size: 46px;
+$default-bkg-color-light: #ddd;
+$default-bkg-color-dark: #3c76ca;
+$default-opacity: .8;
+$default-duration: 3s;
+
+// Need to remove the units to do some math.
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// Mixin for the ui-spinner. Paramters use defaults from above if none passed in.
+@mixin ui-spinner(
+$hole-color: $default-hole-color,
+$size: $default-size,
+$bkg-color-light: $default-bkg-color-light,
+$bkg-color-dark: $default-bkg-color-dark,
+$opacity: $default-opacity,
+$duration: $default-duration
+) {
+  .messenger-spinner {
+    width: $size;
+    height: $size;
+    background: $bkg-color-light;
+
+    .messenger-spinner-side .messenger-spinner-fill {
+      background: $bkg-color-dark;
+      animation-duration: $duration * 2;
+      opacity: $opacity;
+    }
+
+    // This is the 'hole' that creates the ring. It's size is determined by the
+    // size of the spinner.
+    &:after {
+      $hole-size: round((strip-units($size)*.8)) + px;
+      $hole-position: round((strip-units($size)*.1)) + px;
+      content: "";
+      background: $hole-color;
+      position: absolute;
+      width: $hole-size;
+      height: $hole-size;
+      border-radius: 50%;
+      top: $hole-position;
+      left: $hole-position;
+      display: block;
+    }
+  }
+}
+
+// Keyframes for each browser that flip the boxes around.
+
+@-webkit-keyframes ui-spinner-rotate-right {
+  0% {    -webkit-transform: rotate(0deg); }
+  25% {   -webkit-transform: rotate(180deg); }
+  50% {   -webkit-transform: rotate(180deg); }
+  75% {   -webkit-transform: rotate(360deg); }
+  100% {  -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes ui-spinner-rotate-left {
+  0% {    -webkit-transform: rotate(0deg); }
+  25% {   -webkit-transform: rotate(0deg); }
+  50% {   -webkit-transform: rotate(180deg); }
+  75% {   -webkit-transform: rotate(180deg); }
+  100% {  -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes ui-spinner-rotate-right {
+  0% {    -moz-transform: rotate(0deg); }
+  25% {   -moz-transform: rotate(180deg); }
+  50% {   -moz-transform: rotate(180deg); }
+  75% {   -moz-transform: rotate(360deg); }
+  100% {  -moz-transform: rotate(360deg); }
+}
+
+@-moz-keyframes ui-spinner-rotate-left {
+  0% {    -moz-transform: rotate(0deg); }
+  25% {   -moz-transform: rotate(0deg); }
+  50% {   -moz-transform: rotate(180deg); }
+  75% {   -moz-transform: rotate(180deg); }
+  100% {  -moz-transform: rotate(360deg); }
+}
+
+@keyframes ui-spinner-rotate-right {
+  0% {    transform: rotate(0deg); }
+  25% {   transform: rotate(180deg); }
+  50% {   transform: rotate(180deg); }
+  75% {   transform: rotate(360deg); }
+  100% {  transform: rotate(360deg); }
+}
+
+@keyframes ui-spinner-rotate-left {
+  0% {    transform: rotate(0deg); }
+  25% {   transform: rotate(0deg); }
+  50% {   transform: rotate(180deg); }
+  75% {   transform: rotate(180deg); }
+  100% {  transform: rotate(360deg); }
+}
+
+
+// The basic CSS for the spinner. Each '.side' takes turns spinning
+// to reveal the left/right side filling or emptying.
+// The damn thing is so complicated I barely understand it anymore.
+
+.messenger-spinner {
+  position: relative;
+  border-radius: 100%;
+
+  ul.messenger.messenger-spinner-active .messenger-spinner & {
+    display: block;
+  }
+
+  .messenger-spinner-side {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+
+    .messenger-spinner-fill {
+      border-radius: 999px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  .messenger-spinner-side-left {
+    left: 0;
+
+    .messenger-spinner-fill {
+      left: 100%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      animation-name: ui-spinner-rotate-left;
+      transform-origin: 0 50%;
+    }
+  }
+
+  .messenger-spinner-side-right {
+    left: 50%;
+
+    .messenger-spinner-fill {
+      left: -100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      animation-name: ui-spinner-rotate-right;
+      transform-origin: 100% 50%;
+    }
+  }
+}
+
+@mixin unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+$spinnerSize: 22px;
+
+ul.messenger-theme-air {
+  @include unselectable;
+  .messenger-message {
+    @include transition(background-color 0.4s);
+    border-radius: 5px;
+    border-color: $basic-border-color;
+    background-color: lighten($widget-bg, .2);
+    position: relative;
+    margin-bottom: 1em;
+    color: $widget-color;
+    font-weight: 500;
+    padding: 10px 30px 11px 46px;
+    &:hover {
+      background-color: $widget-bg;
+    }
+    .messenger-close {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      color: #888888;
+      opacity: 1;
+      font-weight: bold;
+      display: block;
+      font-size: 20px;
+      line-height: 20px;
+      padding: 8px 10px 7px 7px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      -webkit-appearance: none;
+      &:hover {
+        color: #444444;
+      }
+      &:active {
+        color: #222222;
+      }
+    }
+    .messenger-actions {
+      float: none;
+      margin-top: 10px;
+      a {
+        @include transition(background-color .3s);
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+        color: $widget-color;
+        margin-right: 10px;
+        padding: 3px 10px 5px;
+        text-transform: capitalize;
+        background-color: $bg-addition;
+        &:hover {
+          color: $widget-color;
+          background-color: darken($bg-addition, 10%);
+        }
+        &:active {
+          color: $widget-color;
+        }
+      }
+      .messenger-phrase {
+        display: none;
+      }
+    }
+    .messenger-message-inner:before {
+      border-radius: 50%;
+      position: absolute;
+      left: 17px;
+      display: block;
+      content: " ";
+      top: 50%;
+      margin-top: -8px;
+      height: 13px;
+      width: 13px;
+      z-index: 20;
+    }
+    &.alert-success {
+      .messenger-message-inner:before {
+        background-color: rgb(95, 202, 74);
+      }
+    }
+    &.alert-error {
+      &.messenger-retry-soon {
+        @include ui-spinner(transparent, $spinnerSize, transparent, $messenger-spinner-bg, 1, 10s);
+      }
+      &.messenger-retry-later {
+        @include ui-spinner(transparent, $spinnerSize, transparent, $messenger-spinner-bg, 1, 300s);
+      }
+      .messenger-message-inner:before {
+        background-color: rgb(221, 106, 69);
+      }
+    }
+    &.alert-info {
+      .messenger-message-inner:before {
+        background-color: rgb(97, 196, 184);
+      }
+    }
+  }
+  .messenger-spinner {
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    margin-top: -1 * ($spinnerSize / 2 + 1px);
+    z-index: 999;
+    height: $spinnerSize;
+    width: $spinnerSize;
+    z-index: 10;
+  }
+}

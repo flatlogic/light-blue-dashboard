@@ -1,0 +1,409 @@
+/**
+ * override custom libs styles. This files is not required for core sing functionality and may be removed
+ */
+
+
+
+/**
+ * nvd3
+ */
+.nvtooltip {
+  padding: $padding-small-vertical $padding-small-horizontal;
+  font-family: $font-family-base;
+  font-size: $font-size-small;
+  text-align: center;
+
+  p{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+svg text,
+.nvd3 text{
+  font: $font-weight-base $font-size-small $font-family-base;
+  fill: $text-color;
+
+  .widget &{
+    fill: $widget-color;
+  }
+}
+
+svg .title {
+  font: $font-weight-bold $font-size-base $font-family-base;
+}
+
+.nvd3.nv-noData {
+  font-size: $font-size-large;
+  font-weight: $font-weight-bold;
+}
+
+.nvd3 .nv-axis path.domain {
+  stroke-opacity: 0;
+}
+
+.nv-controlsWrap{
+  .nv-legend-symbol{
+    fill: #666 !important;
+    stroke: #666 !important;
+  }
+}
+
+.nvd3 .nv-legend .disabled circle {
+  fill-opacity: 0;
+}
+
+.nvd3 .nv-axis line{
+  stroke: #000;
+  stroke-opacity: .1;
+}
+
+.nvtooltip h3{
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
+.stat-widget header .nvd3.nv-multibar .nv-group{
+  fill-opacity: 1 !important;
+}
+
+.nvd3.nv-stackedarea path.nv-area {
+  fill-opacity: .8;
+}
+
+.nvd3.nv-stackedarea path.nv-area.hover {
+  fill-opacity: .95;
+}
+
+.nvd3 .nv-axis path.domain{
+  display: none;
+}
+
+.nvtooltip{
+  padding: 5px;
+  position: absolute;
+  background-color: rgba($widget-bg-common, .6);
+  color: $widget-color;
+  border: none;
+  z-index: 10000;
+
+  font-family: inherit;
+
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  -moz-border-radius: 0;
+  border-radius: 0;
+
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.nvtooltip {
+  h3, h4{
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-base;
+    text-align: center;
+  }
+}
+
+.nvd3 .nv-axis line.zero{
+  display: none;
+}
+
+/*!
+ * Bootstrap-select
+ */
+.bootstrap-select .btn:focus{
+  outline: 0 !important;
+}
+
+/**
+ * Select2 Bootstrap CSS
+ */
+/*
+ * override .form-control:focus shadow
+ */
+.select2-container-active .select2-choice,
+.select2-container-multi.select2-container-active .select2-choices{
+  @include box-shadow(none);
+}
+
+.select2-container-multi .select2-choices .select2-search-choice{
+  border-radius: $input-border-radius;
+}
+
+/**
+ * setting correct urls
+ */
+.select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b{
+  background-image: url("#{$libs-compiled-folder}/select2/select2.png");
+  @include retina(){
+    background-image: url("#{$libs-compiled-folder}/select2/select2x2.png") !important;
+  }
+}
+
+.select2-container .select2-choice .select2-arrow,
+.select2-container .select2-choice div {
+  border-left: none;
+}
+
+.select2-search input.select2-active {
+  background: #fff url("#{$libs-compiled-folder}/select2/select2-spinner.gif") no-repeat 100%;
+  background: url("#{$libs-compiled-folder}/select2/select2-spinner.gif") no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+  background: url("#{$libs-compiled-folder}/select2/select2-spinner.gif") no-repeat 100%, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url("#{$libs-compiled-folder}/select2/select2-spinner.gif") no-repeat 100%, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url("#{$libs-compiled-folder}/select2/select2-spinner.gif") no-repeat 100%, linear-gradient(to bottom, #ffffff 85%, #eeeeee 99%) 0 0;
+}
+
+.select2-more-results.select2-active {
+  background: #f4f4f4 url("#{$libs-compiled-folder}/select2/select2-spinner.gif") no-repeat 100%;
+}
+
+.select2-container-multi .select2-choices .select2-search-field input.select2-active {
+  background: #fff url("#{$libs-compiled-folder}/select2/select2-spinner.gif") no-repeat 100% !important;
+}
+
+/**
+ * Make Multi Select2's choices match Bootstrap 3's default button styles.
+ */
+
+.select2-container-multi .select2-choices .select2-search-choice {
+  background: $btn-inverse-bg;
+}
+
+/**
+ * Switchery
+ */
+
+.switchery{
+  background-color: transparent !important;
+}
+
+/**
+ * Datetimepicker for Bootstrap v3
+ */
+.bootstrap-datetimepicker-widget
+{
+  border-radius: $border-radius-base;
+  color: $gray;
+  td,
+  th
+  {
+    border-radius: $border-radius-base;
+  }
+
+  td
+  {
+    &.day:hover,
+    &.hour:hover,
+    &.minute:hover,
+    &.second:hover
+    {
+      background: $gray-lighter;
+    }
+
+    &.old,
+    &.new
+    {
+      color: $gray-light;
+    }
+
+    &.active,
+    &.active:hover
+    {
+      background-color: $btn-primary-bg;
+      text-shadow: none;
+    }
+
+    &.disabled,
+    &.disabled:hover
+    {
+      color: $gray-light;
+    }
+
+    span
+    {
+      border-radius: $border-radius-base;
+
+      &:hover
+      {
+        background: $gray-lighter;
+      }
+
+      &.active
+      {
+        background-color: $btn-primary-bg;
+      }
+
+      &.old
+      {
+        color: $gray-light;
+      }
+
+      &.disabled,
+      &.disabled:hover
+      {
+        color: $gray-light;
+      }
+    }
+  }
+  th
+  {
+    &.next,
+    &.prev
+    {
+      font-size: $font-size-base * 1.5;
+    }
+    &.disabled,
+    &.disabled:hover
+    {
+      color: $gray-light;
+    }
+  }
+  thead tr:first-child th
+  {
+    &:hover
+    {
+      background: $gray-lighter;
+    }
+  }
+
+  .btn:not(.btn-primary){
+    color: darken($link-color, 20%);
+
+    &:hover{
+      @include box-shadow(none);
+    }
+  }
+}
+
+/**
+ * Rickshaw
+ */
+
+.rickshaw_graph .detail .x_label {
+  color: $gray;
+}
+
+
+/***********************************/
+/**           Backgrid            **/
+/***********************************/
+
+.table-editable{
+
+  th > a{
+    color: $text-color;
+    cursor: pointer;
+  }
+
+  .sort-caret {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 0.3em;
+    border: 0;
+    content: "";
+    font: 15px FontAwesome;
+  }
+
+  .ascending .sort-caret {
+    &:before{
+      content: "\f0d8";
+    }
+  }
+
+  .descending .sort-caret {
+    &:before{
+      content: "\f0d7";
+    }
+  }
+
+  + .backgrid-paginator > ul{
+    font-weight: $font-weight-normal;
+    display: inline-block;
+    padding-left: 0;
+    margin: $line-height-computed 0;
+    border-radius: $border-radius-base;
+
+    > li {
+      display: inline; // Remove list-style and block-level defaults
+      > a,
+      > span {
+        position: relative;
+        float: left; // Collapse white-space
+        line-height: $line-height-base;
+        text-decoration: none;
+        color: $pagination-color;
+        background-color: $pagination-bg;
+        border: 1px solid $pagination-border;
+        border-radius: $border-radius-base;
+        margin: 0 2px;
+
+        > .fa-lg{
+          position: relative;
+          top: -1px;
+        }
+      }
+      &:first-child {
+        > a,
+        > span {
+          margin-left: 0;
+        }
+      }
+    }
+
+    > li > a,
+    > li > span {
+      &:hover,
+      &:focus {
+        color: $pagination-hover-color;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-border;
+      }
+    }
+
+    > .active > a,
+    > .active > span {
+      &,
+      &:hover,
+      &:focus {
+        z-index: 2;
+        color: $pagination-active-color;
+        background-color: $pagination-active-bg;
+        border-color: $pagination-active-border;
+        cursor: default;
+      }
+    }
+
+    > .disabled {
+      > span,
+      > span:hover,
+      > span:focus,
+      > a,
+      > a:hover,
+      > a:focus {
+        color: $pagination-disabled-color;
+        background-color: $pagination-disabled-bg;
+        border-color: $pagination-disabled-border;
+        cursor: not-allowed;
+      }
+    }
+
+    @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-base, $border-radius-small);
+  }
+}
+
+/***********************************/
+/**           Rickshaw            **/
+/***********************************/
+
+.rickshaw_legend{
+  background-color: $widget-bg;
+  color: $widget-header-color;
+}

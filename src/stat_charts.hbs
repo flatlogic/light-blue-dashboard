@@ -1,0 +1,79 @@
+{{#extend "layout"}}
+    {{#replace "sidebar"}}
+        {{> sidebar this conditionClass=conditionClass active="stat_charts"}}
+    {{/replace}}
+    {{#replace "app_content"}}
+        <h2 class="page-title">Charts <small>Visual Charts & Graphs</small></h2>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <section class="widget large">
+                    <header>
+                        <h4><i class="fa fa-home"></i> Top sources</h4>
+                    </header>
+                    <div class="body">
+                        <div id="sources-chart-pie" class="chart pie-chart">
+                            <svg></svg>
+                        </div>
+                    </div>
+                    <footer id="data-chart-footer" class="pie-chart-footer">
+                    </footer>
+                </section>
+            </div>
+            <div class="col-lg-9 col-sm-6">
+                <section class="widget large">
+                    <header>
+                        <h4><i class="fa fa-bar-chart-o"></i> Bar Chart <small style="display: inline !important;" class="hidden-xs">Refresh page to see different data</small></h4>
+                    </header>
+                    <div id="sources-chart-bar" class="body chart">
+                        <svg></svg>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <section class="widget large">
+                    <header>
+                        <h4><i class="fa fa-bullhorn"></i> Stream Stacked Chart</h4>
+                    </header>
+                    <div id="sources-chart-stacked" class="body chart">
+                        <svg></svg>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-6">
+                <section class="widget large">
+                    <header>
+                        <h4><i class="fa fa-arrow-circle-o-right"></i> Line Chart</h4>
+                    </header>
+                    <div id="sources-chart-line" class="body chart">
+                        <svg></svg>
+                    </div>
+                </section>
+            </div>
+        </div>
+    {{/replace}}
+
+    {{#append "scripts"}}
+        <!-- page libs -->
+        <script src="js/nvd3-custom-lb1.0/lib/d3.v2.min.js"></script>
+        <script src="js/nvd3-custom-lb1.0/nv.d3.custom.js"></script>
+
+        <!-- nvd3 models -->
+        <script src="js/nvd3-custom-lb1.0/src/models/scatter.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/axis.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/legend.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/stackedArea.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/stackedAreaChart.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/line.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/pie.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/pieChartTotal.js"></script>
+        <script src="js/nvd3-custom-lb1.0/stream_layers.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/lineChart.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/multiBar.js"></script>
+        <script src="js/nvd3-custom-lb1.0/src/models/multiBarChart.js"></script>
+
+        <!-- page application js -->
+        <script src="js/stat-charts.js"></script>
+    {{/append}}
+{{/extend}}

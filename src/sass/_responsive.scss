@@ -1,0 +1,275 @@
+@media (max-width: 320px) {
+  .hidden-xs-portrait{
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .sidebar-hidden .sidebar{
+    display: none;
+  }
+}
+
+@media (max-width: $screen-xs-max){
+
+  .sidebar.nav-collapse,
+  .sidebar.nav-collapse.collapse {
+    overflow: hidden;
+    height: 0;
+  }
+
+  .sidebar.nav-collapse.collapse.in{
+    height: auto;
+  }
+
+  body{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .page-title{
+    margin-top: 6px;
+  }
+
+  .sidebar,
+  .sidebar-on-right .sidebar{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 90px 5%;
+    width: 90%;
+    padding: 0;
+
+    .side-nav{
+      margin: 10px 0;
+    }
+
+  }
+
+  .sidebar + .wrap, .sidebar-on-right .sidebar + .wrap{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nv-controlsWrap{
+    display: none;
+  }
+
+  .logo,
+  .sidebar-on-right .logo,
+  .sidebar-hidden .logo{
+    display: block;
+    left: 1.6%;
+    right: auto;
+    padding-right: 5px;
+    width: 40px;
+    top: 4px;
+  }
+
+  .widget-404-search, .widget-404{
+    width: 402px;
+  }
+
+  .widget-404{
+    padding: 0;
+    .body{
+      margin-top: 0;
+    }
+  }
+
+  .single-widget-container .widget-404-search{
+    margin-top: 0;
+
+    .search-field{
+      width: 285px;
+    }
+  }
+
+  .single-widget-container.error-page{
+    margin-top: -170px;
+  }
+
+  .navbar .nav > li > .dropdown-menu.messages,
+  .navbar .nav > li > .dropdown-menu.support{
+    margin-right: -68px;
+
+    &:after{
+      right: 85px;
+    }
+  }
+
+  .notifications{
+    position: absolute;
+    right: 0;
+    top: 46px;
+    margin: 0;
+
+    @include transition(top .3s ease);
+  }
+
+  .mailbox{
+    .folder-title{
+      float: none;
+    }
+    .form-search{
+      margin-top: $line-height-computed / 2;
+      label{
+        display: block;
+      }
+
+      .input-search{
+        width: 100%;
+        height: 30px;
+        @include box-sizing(border-box);
+        &:hover{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .mailbox-content{
+    margin-top: 0;
+  }
+
+  .client-details{
+    text-align: left;
+  }
+
+  .landing{
+    .logo{
+      width: auto;
+
+      small{
+        display: none;
+      }
+    }
+
+    .features{
+      + .features{
+        margin-top: 0;
+      }
+    }
+
+    .feature{
+      margin-bottom: 20px;
+    }
+  }
+
+  .carousel-landing{
+    height: 215px;
+    margin-bottom: -24px;
+    h1{
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-min){
+
+  .sidebar,
+  .sidebar-on-right .sidebar{
+    margin: 90px 2.5641%;
+    width: 94.8718%;
+  }
+
+  .form-condensed .controls{
+    margin-left: 0;
+  }
+
+// Remove the horizontal form styles
+  .form-horizontal {
+    .control-label {
+      float: none;
+      width: auto;
+      padding-top: 0;
+      text-align: left;
+    }
+    // Move over all input controls and content
+    .controls {
+      margin-left: 0;
+    }
+    // Move the options list down to align with labels
+    .control-list {
+      padding-top: 0; // has to be padding because margin collaspes
+    }
+    // Move over buttons in .form-actions to align with .controls
+    .form-actions {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  body{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .login-widget, .registration-widget{
+    width: 260px;
+  }
+
+  .widget-404-search, .widget-404{
+    width: 260px;
+  }
+
+  .widget-404{
+    h1{
+      font-size: 80px;
+      line-height: 80px;
+    }
+
+    h3{
+      font-size: $font-size-large;
+      line-height: $line-height-computed + 2;
+    }
+  }
+
+  .single-widget-container .widget-404-search{
+    margin-top: 0;
+
+    .search-field{
+      width: 143px;
+    }
+  }
+
+  .single-widget-container.error-page{
+    margin-top: -129px;
+  }
+
+  .navbar .nav > li > .dropdown-menu.messages{
+    margin-right: -112px;
+
+    &:after{
+      right: 129px;
+    }
+  }
+
+  .chat-footer .btn{
+    padding: 4px 0;
+  }
+
+  .page-header .navbar-form{
+    margin: 10px 0 0;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    @include transition(height .3s ease);
+  }
+
+  .page-header .search-query{
+    @include input-block-level();
+    &:focus{
+      width: 100%;
+    }
+  }
+
+  .visible-phone-landscape{
+    display: block !important;
+  }
+
+  .hidden-phone-landscape{
+    display: none !important;
+  }
+}

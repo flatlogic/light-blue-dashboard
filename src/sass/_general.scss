@@ -1,0 +1,107 @@
+//some basic definitions
+//html-elements only. no classes
+
+@mixin background-radial-gradient($figure, $type, $position_x, $position_y, $color_1, $color_2){
+  //there is a built-in compass radial-gradient function, but it does not provide enough compatibility, so need to imitate it
+  //it also has an option $experimental-support-for-svg which should generate correct svg for IE, but it works incorrect, so
+  //fixing it
+  //issue id - https://github.com/chriseppstein/compass/issues/1225
+  background-color: $color_1;
+  //final w3c
+  background-image: url(../img/bg-pattern.svg), radial-gradient(
+                  $type $figure at $position_x $position_y,
+                  $color_1,
+                  $color_2
+  );
+  //webkit-specific
+  background-image: url(../img/bg-pattern.svg), -webkit-radial-gradient(
+                  $position_x $position_y, $type $figure,
+                  $color_1,
+                  $color_2
+  );
+
+  //moz-specific
+  background-image: url(../img/bg-pattern.svg), -moz-radial-gradient(
+                  $position_x $position_y, $type $figure,
+                  $color_1,
+                  $color_2
+  );
+  background-size: cover;
+}
+
+html{
+  min-height: 100%;
+}
+
+body{
+  font-weight: $font-weight-base;
+  padding-bottom: 100px;
+  @include background-radial-gradient(ellipse, farthest-side, 10%, 0,
+          $bg-gradient-color-1 20%, $bg-gradient-color-2
+  );
+  background-attachment: fixed, fixed;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: $font-weight-base;
+
+  small{
+    color: $text-muted;
+    font-weight: $font-weight-base;
+  }
+}
+
+input[type=search], input.search {
+  padding-left: 26px;
+  background-color: $input-bg;
+  background:url(../img/search.png) 5px 6px no-repeat $input-bg;
+
+  &.input-transparent{
+    border: none;
+    color: $widget-color;
+    background: url(../img/search-white.png) 5px 5px no-repeat $widget-bg;
+    @include placeholder(rgba(#eee, .76));
+  }
+}
+
+ul ul,
+ol ul{
+  list-style: none;
+}
+
+ul, ol{
+  list-style: none;
+  padding: 0;
+}
+
+
+//setting default iframe behaviour to border box
+//so it behaves normally within .control-row
+iframe{
+  @include box-sizing(border-box);
+}
+
+//opera is buggy? no chrome is buggy! really strange fix
+fieldset{
+  width: 100%;
+  //Thanks to johan@holmweb.se for that fix
+  min-width: 0;
+}
+
+form{
+  margin-bottom: 0;
+}
+
+a{
+  @include transition(color .2s);
+}
+
+.btn{
+  @include transition(background-color .2s);
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
