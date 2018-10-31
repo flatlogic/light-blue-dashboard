@@ -220,7 +220,7 @@ function initPjax(){
 
             var script = document.createElement('script');
             script.src = $(this).attr('src');
-            $previous.load(function(){
+            $previous.on('load', function(){
                 document.body.appendChild(script);
             });
 
@@ -228,7 +228,7 @@ function initPjax(){
         });
 
         var view = this;
-        $previous.load(function(){
+        $previous.on('load', function(){
             $(document).trigger('pjax-app:loaded');
             view.log('scripts loaded.');
         })
