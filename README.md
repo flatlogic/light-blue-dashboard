@@ -1,12 +1,14 @@
 
-# Sing App Lite - free and open source admin dashboard template
+# Light Blue Dashboard - free and open source admin dashboard template
 Including responsive layout and high quality UI built with Bootstrap 4.
 
-[View Demo](https://flatlogic.github.io/sing-app/) | [Download](https://github.com/flatlogic/sing-app/archive/master.zip) | [Available versions](https://demo.flatlogic.com/sing-app/) | [More templates](https://flatlogic.com/admin-dashboards)
+[View Demo](https://flatlogic.github.io/light-blue-dashboard/) | [Download](https://github.com/flatlogic/light-blue-dashboard/archive/master.zip) | [More templates](https://flatlogic.com/admin-dashboards)
 
-[![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)](https://flatlogic.github.io/sing-app/)
 
-This repository contains a limited free version of [Sing App](https://demo.flatlogic.com/sing-app/). [Full bootstrap 4](https://demo.flatlogic.com/sing-app/html-bs4), [React](https://sing-app.herokuapp.com/app/main/dashboard) with backend, [Angular](https://demo.flatlogic.com/sing-app/angular) and [Angular JS](https://demo.flatlogic.com/sing-app/angularjs) versions are also available and are shipped in a full package.
+
+[![header_illustration_fb](https://user-images.githubusercontent.com/24964748/47848527-a75aee80-dddf-11e8-82ae-b5472e20df7f.png)](https://flatlogic.github.io/light-blue-dashboard/)
+
+This repository contains a limited free version of [Light Blue](https://flatlogic.com/admin-dashboards/light-blue-html5/demo). [Full bootstrap 4](https://flatlogic.com/admin-dashboards/light-blue-html5/demo), [React](https://flatlogic.com/admin-dashboards/light-blue-react/demo) and [Angular](https://flatlogic.com/admin-dashboards/light-blue-angular/demo) versions are also available and are shipped in a full package.
 
 ## Features
 
@@ -23,9 +25,9 @@ Using this template you will be able to leverage lots of built-in components and
 * Maps
 * Hover sidebar
 
-All other features like themining, login, additional pages, etc are available in [full version](https://demo.flatlogic.com/sing-app/).
+All other features like themining, login, additional pages, etc are available in [full version](https://flatlogic.com/admin-dashboards/light-blue-html5/demo).
 
-[![full-version](https://user-images.githubusercontent.com/36201579/40107708-aa2939d6-5901-11e8-8fc1-b31ad46326b7.png)](https://demo.flatlogic.com/sing-app/)
+[![full-version](https://user-images.githubusercontent.com/24964748/47848874-c4dc8800-dde0-11e8-93e7-a78c1e098207.png)](https://flatlogic.com/admin-dashboards/light-blue-html5/demo)
 
 Building a project from scratch means that there is a lot of things to keep track of all at once: analytics, dynamic forms data, UI and UX elements, and much more. This simple admin template is well suited for web apps or any other website or project that requires admin dashboard. This template will serve as a solid foundation for your upcoming project and will save you a lot of time and, hence, money.
 
@@ -36,8 +38,8 @@ Building a project from scratch means that there is a lot of things to keep trac
 You can start by cloning the latest version of Sing App Lite on your local machine by running:
 
 ```shell
-$ git clone -o sing-app-lite -b master --single-branch \
-      https://github.com/flatlogic/sing-app.git MyApp
+$ git clone -o light-blue-dashboard -b master --single-branch \
+      https://github.com/flatlogic/light-blue-dashboard.git MyApp
 $ cd MyApp
 ```
 
@@ -46,7 +48,11 @@ $ cd MyApp
 This will install both run-time project dependencies and developer tools listed
 in [package.json](../package.json) file. We are moving all dependencies to npm, so there will be no bower dependencies soon.
 
-#### 3. Run `gulp build`
+#### 3. Run `npm install -g grunt`
+
+This commant will install grunt task runner globally.
+
+#### 4. Run `grunt`
 
 This command will build the app from the source files (`/src`) into the output
 `/dist` folder. Then open `dist/index.html` in your browser.
@@ -54,19 +60,14 @@ This command will build the app from the source files (`/src`) into the output
 Now you can open your web app in a browser, on mobile devices and start
 hacking. The page must be served from a web server, e.g. apache, nginx, WebStorm built-in web server, etc., otherwise some features may not work properly.
 
-#### 3. Run `gulp watch`
+#### 5. Run `grunt watch`
 This command will watch for changes in `/src` and recompile handlebars' templates & scss styles on the fly into html & css accordingly.
-
-For more information please refer to full [documentation](https://demo.flatlogic.com/sing-app/documentation).
 
 
 ## Integration
-[![integration sample](https://user-images.githubusercontent.com/1212194/40719370-1931c15c-641c-11e8-8285-a950eb155582.png)](http://demo.flatlogic.com/sing-app/html-bs4/)
+[![integration sample](https://user-images.githubusercontent.com/24964748/47849384-7334fd00-dde2-11e8-8329-dc4b9d8927d0.png)](https://flatlogic.com/admin-dashboards/light-blue-html5/demo)
 
 Sing App is a part of admin dashboard solution provided by Flatlogic. We can integrate admin dashboards with such systems as your accounting software, customer relationship management (CRM) system, email management, marketing automation, website analytics program, etc.  Customized Sing App can be a great way to learn about your products usability and extendability. With this dashboard, the owner of the website (platform) can easily track orders and their success rate, track social metrics such as the most popular referring social media sites and their appropriate URLs, monitor sales states and periods of growth to better understand what makes users tick. [Contact us](https://flatlogic.com/contact) to learn more.
-
-## Documentation
-For full documentation, visit [https://demo.flatlogic.com/sing-app/documentation/](https://demo.flatlogic.com/sing-app/documentation/).
 
 ## Support
 For any additional information please refer to [Flatlogic homepage](https://flatlogic.com).
@@ -80,8 +81,8 @@ For any additional information please refer to [Flatlogic homepage](https://flat
 - Like our page on [Facebook](https://www.facebook.com/flatlogic/) :thumbsup:
 
 ## Premium themes
-Looking for premium themes and templates? Check out our other template at [flatlogic.com](https://flatlogic.com/templates).
+Looking for premium themes and templates? Check out our other template at [flatlogic.com](https://flatlogic.com/admin-dashboards).
 
 ## License
 
-Sing App Lite version is [MIT](https://github.com/flatlogic/sing-app/blob/master/LICENSE.txt)-licensed.
+Sing App Lite version is [MIT](https://github.com/flatlogic/light-blue-dashboard/blob/master/LICENSE.txt)-licensed.
