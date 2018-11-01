@@ -1,4 +1,4 @@
-# Contributing to Sing App
+# Contributing to Light Blue
 
 Your contributions are welcome and are greatly appreciated! Every little bit helps, and credit
 will always be given.
@@ -15,7 +15,7 @@ those that are disrespectful.
 
 Feedback is the breakfast for champions! We'd love to hear your opinions, discuss potential
 improvements, architecture, theory, internal implementation, etc. Please, join or start a new
-conversation in our [issue tracker](https://github.com/flatlogic/react-dashboard/issues).
+conversation in our [issue tracker](https://github.com/flatlogic/light-blue-dashboard/issues).
 
 ## Documentation
 
@@ -28,10 +28,10 @@ files right from GitHub website as described [here](https://help.github.com/arti
 Before opening an issue, please:
 
 * Check [Documentation](https://demo.flatlogic.com/sing-app/documentation).
-* Search the [issue tracker](https://github.com/flatlogic/sing-app/issues) to make sure
+* Search the [issue tracker](https://github.com/flatlogic/light-blue-dashboard/issues) to make sure
   your issue hasn’t already been reported.
 * If your issue sounds more like a question, please post it on StackOverflow.com instead with the
-  tag [sing-app](http://stackoverflow.com/questions/tagged/sing-app).
+  tag [light-blue-dashboard](http://stackoverflow.com/questions/tagged/light-blue-dashboard).
 
 ## Pull Requests
 
