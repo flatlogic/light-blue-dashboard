@@ -1,19 +1,20 @@
 
 # Light Blue Dashboard - free and open source admin dashboard template
-Including responsive layout and high quality UI built with Bootstrap 4.
+Awesome transparent design with responsive layout built with Bootstrap.
 
-[View Demo](https://flatlogic.github.io/light-blue-dashboard/) | [Download](https://github.com/flatlogic/light-blue-dashboard/archive/master.zip) | [More templates](https://flatlogic.com/admin-dashboards)
+[View Demo](https://flatlogic.github.io/light-blue-dashboard/) | [Download](https://github.com/flatlogic/light-blue-dashboard/archive/master.zip) | [Full version](https://flatlogic.com/admin-dashboards/light-blue-html5) |[More templates](https://flatlogic.com/admin-dashboards)
 
 
 
 [![header_illustration_fb](https://user-images.githubusercontent.com/24964748/47848527-a75aee80-dddf-11e8-82ae-b5472e20df7f.png)](https://flatlogic.github.io/light-blue-dashboard/)
 
-This repository contains a limited free version of [Light Blue](https://flatlogic.com/admin-dashboards/light-blue-html5/demo). [Full bootstrap 4](https://flatlogic.com/admin-dashboards/light-blue-html5/demo), [React](https://flatlogic.com/admin-dashboards/light-blue-react/demo) and [Angular](https://flatlogic.com/admin-dashboards/light-blue-angular/demo) versions are also available and are shipped in a full package.
+This repository contains a limited free version of [Light Blue](https://flatlogic.com/admin-dashboards/light-blue-html5/demo). [Full bootstrap 4](https://flatlogic.com/admin-dashboards/light-blue-html5/demo), [React](https://flatlogic.com/admin-dashboards/light-blue-react/demo) and [Angular](https://flatlogic.com/admin-dashboards/light-blue-angular/demo) versions are also available via our website.
 
 ## Features
 
-Using this template you will be able to leverage lots of built-in components and thus focus on building features that set you apart from competitors rather than bulding everything from scratch. Lite version of a Sing-app includes following features and pages:
-* Bootstrap 4+ & SCSS
+Using this template you will be able to leverage lots of built-in components and thus focus on building features that set you apart from competitors rather than bulding everything from scratch. Lite version of a Light Blue Dashboard includes following features and pages:
+* Bootstrap & SCSS
+* Unique transparent design
 * Responsive layout
 * Styled Bootstrap components like buttons, modals, etc
 * Dashboard sample
@@ -23,19 +24,16 @@ Using this template you will be able to leverage lots of built-in components and
 * Base charts
 * Icons
 * Maps
-* Hover sidebar
 
 All other features like themining, login, additional pages, etc are available in [full version](https://flatlogic.com/admin-dashboards/light-blue-html5/demo).
 
 [![full-version](https://user-images.githubusercontent.com/24964748/47848874-c4dc8800-dde0-11e8-93e7-a78c1e098207.png)](https://flatlogic.com/admin-dashboards/light-blue-html5/demo)
 
-Building a project from scratch means that there is a lot of things to keep track of all at once: analytics, dynamic forms data, UI and UX elements, and much more. This simple admin template is well suited for web apps or any other website or project that requires admin dashboard. This template will serve as a solid foundation for your upcoming project and will save you a lot of time and, hence, money.
-
 ## Quick Start
 
 #### 1. Get the latest version
 
-You can start by cloning the latest version of Sing App Lite on your local machine by running:
+You can start by cloning the latest version of Light Blue Dashboard on your local machine by running:
 
 ```shell
 $ git clone -o light-blue-dashboard -b master --single-branch \
@@ -64,13 +62,13 @@ hacking. The page must be served from a web server, e.g. apache, nginx, WebStorm
 This command will watch for changes in `/src` and recompile handlebars' templates & scss styles on the fly into html & css accordingly.
 
 
-## Integration
-[![integration sample](https://user-images.githubusercontent.com/24964748/47849384-7334fd00-dde2-11e8-8329-dc4b9d8927d0.png)](https://flatlogic.com/admin-dashboards/light-blue-html5/demo)
+## Integration & Customization
+[![integration sample](https://user-images.githubusercontent.com/24964748/47849384-7334fd00-dde2-11e8-8329-dc4b9d8927d0.png)](https://flatlogic.com/services/admin-template-integration)
 
-Sing App is a part of admin dashboard solution provided by Flatlogic. We can integrate admin dashboards with such systems as your accounting software, customer relationship management (CRM) system, email management, marketing automation, website analytics program, etc.  Customized Sing App can be a great way to learn about your products usability and extendability. With this dashboard, the owner of the website (platform) can easily track orders and their success rate, track social metrics such as the most popular referring social media sites and their appropriate URLs, monitor sales states and periods of growth to better understand what makes users tick. [Contact us](https://flatlogic.com/contact) to learn more.
+Light Blue Dashboard is a part of [admin dashboard solution](https://flatlogic.com/services/admin-template-integration) provided by Flatlogic. We can integrate admin dashboards with such systems as your accounting software, customer relationship management (CRM) system, email management, marketing automation, website analytics program, etc. With this dashboard, the owner of the website (platform) can easily track orders and their success rate, track social metrics such as the most popular referring social media sites and their appropriate URLs, monitor sales states and periods of growth to better understand what makes users tick. [Contact us](https://flatlogic.com/contact) to learn more.
 
 ## Support
-For any additional information please refer to [Flatlogic homepage](https://flatlogic.com).
+For any additional information please refer to [documentation](https://demo.flatlogic.com/light-blue/documentation/).
 
 ## How can I support developers?
 - Star our GitHub repo :star:
@@ -85,4 +83,4 @@ Looking for premium themes and templates? Check out our other template at [flatl
 
 ## License
 
-Sing App Lite version is [MIT](https://github.com/flatlogic/light-blue-dashboard/blob/master/LICENSE.txt)-licensed.
+Light Blue Dashboard is [MIT](https://github.com/flatlogic/light-blue-dashboard/blob/master/LICENSE.txt)-licensed.
