@@ -11,6 +11,8 @@
 
 /* global define */
 
+/* eslint-disable strict */
+
 ;(function ($) {
   'use strict'
   var tmpl = function (id, data) {
@@ -18,8 +20,8 @@
     return data
       ? f(data, tmpl)
       : function (data) {
-        return f(data, tmpl)
-      }
+          return f(data, tmpl)
+        }
   }
   tmpl.cache = {}
   tmpl.encReg = /[<>&"'\x00]/g // eslint-disable-line no-control-regex
@@ -31,6 +33,7 @@
     "'": '&#39;'
   }
   tmpl.encode = function (s) {
+    // eslint-disable-next-line eqeqeq
     return (s == null ? '' : '' + s).replace(tmpl.encReg, function (c) {
       return tmpl.encMap[c] || ''
     })

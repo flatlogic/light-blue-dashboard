@@ -10,6 +10,9 @@
  * https://opensource.org/licenses/MIT
  */
 
+/* eslint-disable strict */
+/* eslint-disable no-console */
+
 ;(function () {
   'use strict'
   var path = require('path')
@@ -60,6 +63,7 @@
         return
       }
       content = fs.readFileSync(file, 'utf8')
+      // eslint-disable-next-line no-constant-condition
       while (true) {
         // Find templates in script tags:
         result = regexp.exec(content)

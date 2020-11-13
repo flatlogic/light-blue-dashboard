@@ -14,24 +14,26 @@
 
 /* global define */
 
+/* eslint-disable strict */
+
 ;(function ($) {
   'use strict'
   var tmpl = function (str, data) {
     var f = !/[^\w\-.:]/.test(str)
       ? (tmpl.cache[str] = tmpl.cache[str] || tmpl(tmpl.load(str)))
       : new Function( // eslint-disable-line no-new-func
-        tmpl.arg + ',tmpl',
-        'var _e=tmpl.encode' +
+          tmpl.arg + ',tmpl',
+          'var _e=tmpl.encode' +
             tmpl.helper +
             ",_s='" +
             str.replace(tmpl.regexp, tmpl.func) +
             "';return _s;"
-      )
+        )
     return data
       ? f(data, tmpl)
       : function (data) {
-        return f(data, tmpl)
-      }
+          return f(data, tmpl)
+        }
   }
   tmpl.cache = {}
   tmpl.load = function (id) {
@@ -75,6 +77,7 @@
     "'": '&#39;'
   }
   tmpl.encode = function (s) {
+    // eslint-disable-next-line eqeqeq
     return (s == null ? '' : '' + s).replace(tmpl.encReg, function (c) {
       return tmpl.encMap[c] || ''
     })

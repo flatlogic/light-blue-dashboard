@@ -15162,15 +15162,16 @@ textarea + .help-block,
 .label,
 .badge {
   display: inline-block;
-  padding: 2px 4px;
+  padding: 4px 8px;
   line-height: 14px;
   text-shadow: none;
   font-weight: 600;
   font-size: 11px;
+  margin: 0 0.61rem;
 }
 
 .badge {
-  padding: 2px 9px;
+  padding: 4px 8px;
 }
 
 .badge-default {
@@ -15219,6 +15220,10 @@ textarea + .help-block,
 
 .badge-danger[href]:hover, .badge-danger[href]:focus {
   background-color: #ac390e;
+}
+
+.icons-page .label.label-danger, .icons-page .label.label-important {
+  display: inline !important;
 }
 
 /***************************/

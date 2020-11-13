@@ -11,6 +11,8 @@
 
 /* global beforeEach, afterEach, describe, it */
 
+/* eslint-disable strict */
+
 ;(function (context, expect, tmpl) {
   'use strict'
 
@@ -203,7 +205,7 @@
     it('For loop print call', function () {
       expect(
         tmpl(
-          '{% for (var i=0; i<o.list.length; i++) {' + 'print(o.list[i]);} %}',
+          '{% for (var i=0; i<o.list.length; i++) {print(o.list[i]);} %}',
           data
         )
       ).to.equal('12345')
