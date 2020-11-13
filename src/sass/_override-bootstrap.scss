@@ -724,15 +724,16 @@ textarea,
 .label,
 .badge {
   display: inline-block;
-  padding: 2px 4px;
+  padding: 4px 8px;
   line-height: 14px; // ensure proper line-height if floated
   text-shadow: none;
   font-weight: $font-weight-semi-bold;
   font-size: $font-size-small - 1;
+  margin: 0 0.61rem;
 }
 
 .badge{
-  padding: 2px 9px;
+  padding: 4px 8px;
 }
 
 .badge-default {
@@ -765,6 +766,10 @@ textarea,
 
 .label-inverse{
   @extend .label-default;
+}
+
+.icons-page .label.label-danger {
+  display: inline!important;
 }
 
 /***************************/

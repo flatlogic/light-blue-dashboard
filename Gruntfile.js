@@ -10,7 +10,6 @@ module.exports = function(grunt) {
             distFolder: './dist'
         },
 
-
         // compiles handlebars template to html
         'handlebarslayouts': {
             templates: {
