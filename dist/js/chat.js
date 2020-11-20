@@ -83,7 +83,7 @@ $(function(){
 
             createOnEnter: function(e) {
                 if (Messages.length < 10){
-                    if (e.keyCode != 13) return;
+                    if (e.keyCode !== 13) return;
                     if (!this.input.val()) return;
 
                     Messages.create({text: this.input.val()});

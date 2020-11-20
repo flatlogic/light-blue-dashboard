@@ -2,12 +2,12 @@ $(function () {
     'use strict';
 
     const COLORS = {
-        lineChart: ['#e4bd52', '#ffe291', '#f0af03'],
-        barChart: ['#8cc1f7', '#b8ffb7', '#f0af03'],
-        trackingChart: ['#7ece7c', '#f3794c'],
-        pieChart: ['#ffd7de', '#8fe5d4', '#ace5d1', '#ffebb2', '#fff8e3'],
-        markers: ['#e2e1ff', '#f59f9f', '#ffd7de', '#8fe5d4', '#ace5d1', '#ffebb2', '#fff8e3'],
-        donutChart: ['#8fe5d4', '#ace5d1', '#ffebb2', '#fff8e3'],
+        lineChart: ['#E49400', '#F45722', '#E49400'],
+        barChart: ['#2477FF', '#2D8515', '#E49400'],
+        trackingChart: ['#2D8515', '#F45722'],
+        pieChart: ['#e671b8', '#2D8515', '#4179CF', '#E49400', '#E49400'],
+        markers: ['#e671b8', '#E49400', '#e671b8', '#4179CF', '#ace5d1', '#ffebb2', '#fff8e3'],
+        donutChart: ['#2D8515', '#4179CF', '#E49400', '#e671b8'],
         fontColor: '#c1ccd3',
         gridBorder: 'transparent',
     };
@@ -358,7 +358,11 @@ $(function () {
                 },
                 legend: {
                     backgroundColor: "transparent",
-                    labelBoxBorderColor: "none"
+                    labelBoxBorderColor: "none",
+                    labelFormatter: function(label) {
+                        // series is the series object for the label
+                        return '<p class="mb-0" style="color: #c1ccd3">' + ' ' + label + '</p>';
+                    }
                 },
                 colors: COLORS.barChart
             });
@@ -419,7 +423,11 @@ $(function () {
                 colors: COLORS.donutChart,
                 legend: {
                     noColumns: 1,
-                    container: $('#flot-donut-legend')
+                    container: $('#flot-donut-legend'),
+                    labelFormatter: function(label) {
+                        // series is the series object for the label
+                        return '<p class="mb-0" style="color: #c1ccd3">' + ' ' + label + '</p>';
+                    }
                 }
             });
         }
@@ -484,7 +492,7 @@ $(function () {
                         color: COLORS.fontColor
                     }
                 },
-                colors: ['#b7b3ff', '#e2e1ff', '#f59f9f', '#ffd7de', '#8fe5d4', '#ace5d1', '#ffebb2', '#fff8e3'],
+                colors: ['#e671b8', '#E49400', '#4179CF', '#ace5d1', '#ffebb2'],
             });
         }
     }

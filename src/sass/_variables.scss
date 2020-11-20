@@ -8,18 +8,21 @@ $libs-compiled-folder: '../lib' !default;
 // Colors
 // ------------------------
 
-$lime:                  #8CBF26 !default;
-$red:                   #db4912 !default;
-$red-dark:              #d04f4f !default;
-$blue:                  #4e85bd !default;
-$green:                 #57b955 !default;
-$orange:                #f0af03 !default;
-$pink:                  #E671B8 !default;
-$purple:                #A700AE !default;
-$brown:                 #A05000 !default;
-$teal:                  #4ebfbb !default;
-$white:                 #ffffff !default;
-$black:                 #000000 !default;
+$lime:     #8cbf26 !default;
+$red:      #DB2A34 !default;
+$red-dark: #d04f4f !default;
+$blue:     #2477FF !default;
+$green:    #2D8515 !default;
+$orange:   #E49400 !default;
+$pink:     #e671b8 !default;
+$purple:   #474D84 !default;
+$brown:    #a05000 !default;
+$teal:     #4179CF !default;
+$dark:     #040620 !default;
+$violet:   #333867 !default;
+$default:  #474D84 !default;
+$white:    #ffffff !default;
+$black:    #000000 !default;
 
 $colors: $red, $orange, $lime, $green, $teal, $blue, $brown, $red-dark;
 $color-names: "red", "orange", "lime", "green", "teal", "blue", "brown", "red-dark";

@@ -43,7 +43,7 @@ $i: 1;
 
 .logo{
   @include box-sizing(content-box);
-  position: absolute;
+    position: absolute;
   @media (min-height: 940px) {
     position: fixed;
   }
@@ -1493,4 +1493,11 @@ ul.text-list{
 
 ol.text-list{
   list-style: decimal;
+}
+
+.icons-page {
+  .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
