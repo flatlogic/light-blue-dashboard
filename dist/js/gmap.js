@@ -68,5 +68,5 @@ $(function(){
     }
 
     pageLoad();
-    SingApp.onPageLoad(pageLoad);
+    PjaxApp.onPageLoad(pageLoad);
 });

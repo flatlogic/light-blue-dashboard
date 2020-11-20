@@ -279,97 +279,22 @@
         <div class="content container">
         <h2 class="page-title">Maps <small>Built-in google & vector maps</small></h2>
         <div class="row">
-            <div class="col-md-6">
-                <section class="widget large">
-                    <header>
-                        <h4>
-                            <i class="fa fa-google-plus"></i>
-                            Google maps. Basic
-                        </h4>
-                    </header>
-                    <div class="body">
-                        <div class="map">
-                            <div id="basic"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-md-6">
-                <section class="widget large">
-                    <header>
-                        <h4>
-                            <i class="fa fa-map-marker"></i>
-                            Address and location
-                        </h4>
-                        <div class="actions">
-                            <input id="address" type="text" class="input-transparent form-control mt-n-xs" placeholder="Enter Address">
-                        </div>
-                    </header>
-                    <div class="body">
-                        <div class="map">
-                            <div id="location"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+          <div class="col-xs-12">
+            <section class="widget">
+              <header>
+                <h4>
+                  <i class="fa fa-google-plus"></i>
+                  Google maps. Basic
+                </h4>
+              </header>
+              <div class="body">
+                <div class="map">
+                  <div id="gmap" style="height: 600px"></div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <section class="widget large">
-                    <header>
-                        <h4>
-                            <i class="fa fa-arrow-right"></i>
-                            Region vector map
-                        </h4>
-                        <div class="actions">
-                            <select id="part" class="selectpicker"
-                                    data-style="btn-success btn-sm"
-                                    data-width="auto">
-                                <option value="europe_en">Europe</option>
-                                <option value="usa_en">USA</option>
-                                <option value="australia_en">Australia</option>
-                            </select>
-                        </div>
-                    </header>
-                    <div class="body">
-                        <div class="map">
-                            <div id="vector-detailed"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-md-6">
-                <section class="widget large">
-                    <header>
-                        <h4>
-                            <i class="fa fa-dashboard"></i>
-                            World vector map
-                        </h4>
-                    </header>
-                    <div class="body">
-                        <div class="map">
-                            <div id="vector-world"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>One fine body…</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
             <footer class="content-footer">
                 Light Blue 4.0 Ajax Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
             </footer>
@@ -427,16 +352,10 @@
 
     <!-- page specific scripts -->
         <!-- page specific libs -->
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="lib/gmap3/dist/gmap3.min.js"></script>
-        <script src="lib/jqvmap/dist/jquery.vmap.min.js"></script>
-        <script src="lib/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-        <script src="lib/jqvmap/dist/maps/jquery.vmap.usa.js"></script>
-        <script src="lib/jqvmap/dist/maps/continents/jquery.vmap.australia.js"></script>
-        <script src="lib/jqvmap/dist/maps/jquery.vmap.europe.js"></script>
-        <script src="lib/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyCzLGh9l7VfM67K_8wSxf4rkqoyo_3YXgY"></script>
+        <script src="lib/gmaps/gmaps.js"></script>
         <!-- page application js -->
-        <script src="js/component-maps.js"></script>
+        <script src="js/gmap.js"></script>
 
 </body>
 </html>
