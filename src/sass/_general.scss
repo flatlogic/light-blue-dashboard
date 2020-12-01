@@ -36,10 +36,11 @@ html{
 body{
   font-weight: $font-weight-base;
   padding-bottom: 100px;
-  @include background-radial-gradient(ellipse, farthest-side, 10%, 0,
-          $bg-gradient-color-1 20%, $bg-gradient-color-2
-  );
-  background-attachment: fixed, fixed;
+  // @include background-radial-gradient(ellipse, farthest-side, 10%, 0,
+  //         $bg-gradient-color-1 20%, $bg-gradient-color-2
+  // );
+  // background-attachment: fixed, fixed;
+  background-color: #535C63;
 }
 
 h1,h2,h3,h4,h5,h6{

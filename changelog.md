@@ -1,4 +1,11 @@
 # Changelog
+## [4.0.2]
+
+### Updated and fixed
+
+- Apdate several assets
+- Fix charts
+- Change main bg color
 ## [4.0.1]
 
 ### Updated and fixed

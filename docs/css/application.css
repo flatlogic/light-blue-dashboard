@@ -19606,12 +19606,7 @@ html {
 body {
   font-weight: 300;
   padding-bottom: 100px;
-  background-color: #414e60 20%;
-  background-image: url(../img/bg-pattern.svg), radial-gradient(farthest-side ellipse at 10% 0, #414e60 20%, #94a3b1);
-  background-image: url(../img/bg-pattern.svg), -webkit-radial-gradient(10% 0, farthest-side ellipse, #414e60 20%, #94a3b1);
-  background-image: url(../img/bg-pattern.svg), -moz-radial-gradient(10% 0, farthest-side ellipse, #414e60 20%, #94a3b1);
-  background-size: cover;
-  background-attachment: fixed, fixed;
+  background-color: #535C63;
 }
 
 h1, h2, h3, h4, h5, h6 {

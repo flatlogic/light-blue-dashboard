@@ -1,6 +1,6 @@
 {
   "name": "light-blue",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Light Blue - Responsive Admin Dashboard Template",
   "devDependencies": {
     "grunt": "^0.4.5",
