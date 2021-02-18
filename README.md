@@ -2,7 +2,7 @@
 # Light Blue Dashboard - free and open source admin dashboard template
 Awesome transparent design with responsive layout built with Bootstrap.
 
-[View Demo](https://flatlogic.github.io/light-blue-dashboard/) | [Download](https://github.com/flatlogic/light-blue-dashboard/archive/master.zip) | [Full version](https://flatlogic.com/admin-dashboards/light-blue-html5) |[More templates](https://flatlogic.com/admin-dashboards)
+[View Demo](https://flatlogic.github.io/light-blue-dashboard/) | [Download](https://github.com/flatlogic/light-blue-dashboard/archive/master.zip) | [Full version](https://flatlogic.com/admin-dashboards/light-blue-html5) | [More templates](https://flatlogic.com/admin-dashboards) | [Support forum](https://flatlogic.com/forum)
 
 
 
@@ -68,7 +68,7 @@ This command will watch for changes in `/src` and recompile handlebars' template
 Light Blue Dashboard is a part of [admin dashboard solution](https://flatlogic.com/services/admin-template-integration) provided by Flatlogic. We can integrate admin dashboards with such systems as your accounting software, customer relationship management (CRM) system, email management, marketing automation, website analytics program, etc. With this dashboard, the owner of the website (platform) can easily track orders and their success rate, track social metrics such as the most popular referring social media sites and their appropriate URLs, monitor sales states and periods of growth to better understand what makes users tick. [Contact us](https://flatlogic.com/contact) to learn more.
 
 ## Support
-For any additional information please refer to [documentation](https://demo.flatlogic.com/light-blue/documentation/).
+For any additional information please go to our [**support forum**](https://flatlogic.com/forum) and raise your questions or feedback provide there. We highly appreciate your participation!
 
 ## How can I support developers?
 - Star our GitHub repo :star:
