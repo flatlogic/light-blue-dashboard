@@ -41,12 +41,12 @@ $ git clone -o light-blue-dashboard -b master --single-branch \
 $ cd MyApp
 ```
 
-#### 2. Run `npm install && bower install`
+#### 2. Run `yarn install && bower install`
 
 This will install both run-time project dependencies and developer tools listed
-in [package.json](../package.json) file. We are moving all dependencies to npm, so there will be no bower dependencies soon.
+in [package.json](../package.json) file. We are moving all dependencies to yarn, so there will be no bower dependencies soon.
 
-#### 3. Run `npm install -g grunt`
+#### 3. Run `yarn install -g grunt`
 
 This commant will install grunt task runner globally.
 
