@@ -1,14 +1,12 @@
 
 # Light Blue Dashboard - free and open source admin dashboard template
-Awesome transparent design with responsive layout built with Bootstrap.
+The [Light Blue Dashboard](https://flatlogic.com/admin-dashboards/light-blue-html5/demo), a free and open-source admin dashboard template, features an awesome transparent design and responsive layout built with Bootstrap. This repository offers a sneak peek through a limited free version of Light Blue, with [full bootstrap 4](https://flatlogic.com/admin-dashboards/light-blue-html5/demo), [React](https://flatlogic.com/admin-dashboards/light-blue-react/demo), and [Angular](https://flatlogic.com/admin-dashboards/light-blue-angular/demo)versions accessible via our website, providing versatile development options for creating intuitive and visually appealing [business software](https://flatlogic.com/) interfaces.
 
 [View Demo](https://flatlogic.github.io/light-blue-dashboard/) | [Download](https://github.com/flatlogic/light-blue-dashboard/archive/master.zip) | [Full version](https://flatlogic.com/admin-dashboards/light-blue-html5) | [More templates](https://flatlogic.com/admin-dashboards) | [Support forum](https://flatlogic.com/forum)
 
 
 
 [![header_illustration_fb](https://user-images.githubusercontent.com/24964748/47848527-a75aee80-dddf-11e8-82ae-b5472e20df7f.png)](https://flatlogic.github.io/light-blue-dashboard/)
-
-This repository contains a limited free version of [Light Blue](https://flatlogic.com/admin-dashboards/light-blue-html5/demo). [Full bootstrap 4](https://flatlogic.com/admin-dashboards/light-blue-html5/demo), [React](https://flatlogic.com/admin-dashboards/light-blue-react/demo) and [Angular](https://flatlogic.com/admin-dashboards/light-blue-angular/demo) versions are also available via our website.
 
 ## Features
 
