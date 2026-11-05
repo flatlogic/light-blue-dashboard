@@ -2,14 +2,29 @@
   "name": "light-blue",
   "version": "4.0.2",
   "description": "Light Blue - Responsive Admin Dashboard Template",
+  "private": true,
+  "engines": {
+    "node": ">=22.23.0"
+  },
+  "scripts": {
+    "init": "npm ci && npm run install:client",
+    "install:client": "bower install && node build/patch-bootstrap.cjs",
+    "build": "gulp build",
+    "build:production": "gulp build --production",
+    "start": "gulp serve",
+    "watch": "gulp watch",
+    "test": "node --test tests/build.test.cjs",
+    "test:e2e": "playwright test"
+  },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^1.3.1",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-copy": "0.8.2",
-    "grunt-contrib-uglify": "0.11.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-handlebars-layouts": "0.2.4",
-    "grunt-sass": "1.2.1"
+    "@playwright/test": "^1.64.1",
+    "bower": "^1.8.14",
+    "browser-sync": "^3.0.4",
+    "diff": "^8.0.4",
+    "gulp": "^5.0.1",
+    "handlebars": "^4.7.9",
+    "handlebars-layouts": "^3.1.4",
+    "sass": "^1.107.1",
+    "terser": "^5.44.0"
   }
 }

@@ -1,8 +1,8 @@
 {{#extend "layout" title="Light Blue Dashboard - Charts"}}
-{{#replace "sidebar"}}
-{{> sidebar this conditionClass=conditionClass active="charts"}}
-{{/replace}}
-{{#replace "app_content"}}
+{{#content "sidebar"}}
+{{> sidebar this active="charts"}}
+{{/content}}
+{{#content "app_content"}}
 <h1 class="page-title">Visual - <span class="fw-semi-bold">Charts</span></h1>
 <div class="row">
     <div class="col-lg-6 col-xl-5">
@@ -197,9 +197,9 @@
         </section>
     </div>
 </div>
-{{/replace}}
+{{/content}}
 
-{{#append "scripts"}}
+{{#content "scripts" mode="append"}}
 <script src="lib/jquery.sparkline/index.js"></script>
 <script src="lib/flot.animator/jquery.flot.animator.min.js"></script>
 <script src="lib/flot/jquery.flot.js"></script>
@@ -212,5 +212,5 @@
 <script src="lib/flot/jquery.flot.symbol.js"></script>
 <!-- page specific js -->
 <script src="js/charts.js"></script>
-{{/append}}
+{{/content}}
 {{/extend}}

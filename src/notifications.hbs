@@ -1,8 +1,8 @@
 {{#extend "layout" title="Light Blue Dashboard - Notifications"}}
-    {{#replace "sidebar"}}
-        {{> sidebar this conditionClass=conditionClass active="notifications"}}
-    {{/replace}}
-    {{#replace "app_content"}}
+    {{#content "sidebar"}}
+        {{> sidebar this active="notifications"}}
+    {{/content}}
+    {{#content "app_content"}}
         <h2 class="page-title">Notifications <small>Transactional messages in your app</small></h2>
         <div class="row">
             <div class="col-md-12">
@@ -56,9 +56,9 @@
                 </section>
             </div>
         </div>
-    {{/replace}}
+    {{/content}}
 
-    {{#append "scripts"}}
+    {{#content "scripts" mode="append"}}
         <!-- page specific libs -->
         <script src="lib/messenger/build/js/messenger.js"></script>
         <script src="lib/messenger/build/js/messenger-theme-flat.js"></script>
@@ -68,5 +68,5 @@
 
         <!-- page application js -->
         <script src="js/ui-notifications.js"></script>
-    {{/append}}
+    {{/content}}
 {{/extend}}

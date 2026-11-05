@@ -1,8 +1,8 @@
 {{#extend "layout" title="Light Blue Dashboard - Maps"}}
-    {{#replace "sidebar"}}
-        {{> sidebar this conditionClass=conditionClass active="maps"}}
-    {{/replace}}
-    {{#replace "app_content"}}
+    {{#content "sidebar"}}
+        {{> sidebar this active="maps"}}
+    {{/content}}
+    {{#content "app_content"}}
         <h2 class="page-title">Maps <small>Built-in google & vector maps</small></h2>
         <div class="row">
           <div class="col-xs-12">
@@ -21,13 +21,13 @@
             </section>
           </div>
         </div>
-    {{/replace}}
+    {{/content}}
 
-    {{#append "scripts"}}
+    {{#content "scripts" mode="append"}}
         <!-- page specific libs -->
         <script src="https://maps.google.com/maps/api/js?key=AIzaSyCzLGh9l7VfM67K_8wSxf4rkqoyo_3YXgY"></script>
         <script src="lib/gmaps/gmaps.js"></script>
         <!-- page application js -->
         <script src="js/gmap.js"></script>
-    {{/append}}
+    {{/content}}
 {{/extend}}

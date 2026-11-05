@@ -75,6 +75,12 @@ $(function(){
         return;
     }
 
+    // These controls are generated from our own template. Keep Bootstrap's
+    // sanitizer, permitting only the button attributes this popover needs.
+    var settingsWhiteList = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS.whiteList, {
+        button: ['type', 'data-value']
+    });
+
     $settings.popover({
         template: '<div class="popover settings-popover">' +
             '<div class="arrow"></div>' +
@@ -83,6 +89,7 @@ $(function(){
             '</div>' +
             '</div>',
         html: true,
+        whiteList: settingsWhiteList,
         animation: false,
         placement: 'bottom',
         content: function(){

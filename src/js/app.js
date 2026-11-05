@@ -205,7 +205,7 @@ function initPjax(){
 
         //ensure synchronous loading
         var $previous = {
-            load: function(fn){
+            on: function(event, fn){
                 fn();
             }
         };

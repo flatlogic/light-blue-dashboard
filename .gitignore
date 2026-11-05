@@ -1,2 +1,6 @@
 bower_components
 node_modules
+dist/
+.tmp/
+test-results/
+playwright-report/

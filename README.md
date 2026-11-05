@@ -39,26 +39,59 @@ $ git clone -o light-blue-dashboard -b master --single-branch \
 $ cd MyApp
 ```
 
-#### 2. Run `yarn install && bower install`
+#### 2. Install dependencies with Node 22.23 or newer
 
-This will install both run-time project dependencies and developer tools listed
-in [package.json](../package.json) file. We are moving all dependencies to yarn, so there will be no bower dependencies soon.
+```sh
+npm ci
+npm run install:client
+```
 
-#### 3. Run `yarn install -g grunt`
+The npm lock is canonical for build tools. The pinned Bower manifest retains the
+browser libraries and their existing public asset paths. The retired Grunt,
+node-sass and grunt-handlebars-layouts dependency trees are replaced by Gulp 5,
+Dart Sass and Handlebars 4 with the maintained layout helper.
 
-This commant will install grunt task runner globally.
+#### 3. Build and serve
 
-#### 4. Run `grunt`
+```sh
+npm run build              # expanded development CSS and unminified app scripts
+npm run build:production   # compressed CSS and minified app scripts
+npm start                  # development build/server, no automatic browser window
+npm run watch              # rebuild on source changes
+```
 
-This command will build the app from the source files (`/src`) into the output
-`/dist` folder. Then open `dist/index.html` in your browser.
+Open `http://127.0.0.1:43195` when serving. Both build modes preserve layout
+blocks, `conditionClass` active/inverse behaviour, legacy `CSS:` imports, fonts,
+images, and the same page URLs. The legacy `dist-*` task names are available
+through local Gulp instead of a global Grunt installation.
 
-Now you can open your web app in a browser, on mobile devices and start
-hacking. The page must be served from a web server, e.g. apache, nginx, WebStorm built-in web server, etc., otherwise some features may not work properly.
+#### 4. Verify changes
 
-#### 5. Run `grunt watch`
-This command will watch for changes in `/src` and recompile handlebars' templates & scss styles on the fly into html & css accordingly.
+```sh
+npm run build:production
+npm test
+npm run test:e2e
+npm audit
+```
 
+The artifact tests check helper/importer contracts, every generated page and
+local script/style URL, CSS asset resolution, binary byte preservation, and
+backport idempotence/input validation.
+Browser tests use installed Chrome; they check seven pages, chart canvases and
+real PJAX transitions, settings controls, and both Bootstrap vulnerability
+payloads. Google Maps requires the existing external API key/service
+and is documented separately from the local smoke checks.
+
+Only static legacy Select2/DataTables images are retained under `src/vendor` to
+satisfy existing stylesheet URL contracts. Their licenses, upstream versions and
+SHA256 hashes are recorded alongside them. No old JavaScript or dependency
+metadata is moved into that directory. The former unavailable HTTP Sparkline URL
+is replaced by the pinned official npm archive, preserving its `lib/.../index.js`
+URL through the build.
+
+Npm audit covers the build tree, while Bower browser versions require a separate
+advisory check. In particular Underscore is pinned to 1.13.8, which fixes
+[the recursion DoS advisory](https://github.com/advisories/GHSA-qpx9-hpmf-5gmw).
 
 ## Integration & Customization
 [![integration sample](https://user-images.githubusercontent.com/24964748/47849384-7334fd00-dde2-11e8-8329-dc4b9d8927d0.png)](https://flatlogic.com/services/admin-template-integration)
@@ -82,3 +115,18 @@ Looking for premium themes and templates? Check out our other template at [flatl
 ## License
 
 Light Blue Dashboard is [MIT](https://github.com/flatlogic/light-blue-dashboard/blob/master/LICENSE.txt)-licensed.
+
+Bootstrap 3 is end of life. The `bootstrap-sass` 3.4.3 wrapper embeds Bootstrap
+3.4.1, so installation and builds apply the official Debian backports for
+[the tooltip/popover advisory](https://github.com/advisories/GHSA-q58r-hwc8-rm9j)
+and [the data-loading-text advisory](https://github.com/advisories/GHSA-vxmc-5x29-h64v).
+Exact source and patch checksums, provenance, and the fail-fast apply step are
+recorded in [build/bootstrap-patches](build/bootstrap-patches/README.md). Both raw
+and minified bundles are patched. These local fixes do not change upstream
+version metadata or make Bootstrap 3 supported; future advisories still require
+review. No advisory is dismissed or hidden.
+
+The tracked `docs/` demo is regenerated from the production build. Its library
+scripts are limited to those referenced by the rendered pages; obsolete vendor
+test runners and unused library copies are removed. Images, licenses, public
+URLs, page content and application features are retained.
