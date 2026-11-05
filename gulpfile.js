@@ -10,7 +10,7 @@ const sass = require('sass')
 const { minify } = require('terser')
 const browserSync = require('browser-sync').create()
 const { conditionClass, cssImporter } = require('./build/helpers.cjs')
-const { patchBootstrap } = require('./build/patch-bootstrap.cjs')
+const { patchInstalledBootstrap } = require('./build/patch-bootstrap.cjs')
 const pkg = require('./package.json')
 const production = process.argv.includes('--production') || process.env.NODE_ENV === 'production'
 
@@ -97,7 +97,7 @@ async function scripts() {
 }
 
 async function libraries() {
-  await patchBootstrap()
+  await patchInstalledBootstrap()
   await fs.rm('dist/lib', { recursive: true, force: true })
   await copy(
     ['bower_components/**/*.{png,gif}', 'bower_components/**/LICENSE*'],

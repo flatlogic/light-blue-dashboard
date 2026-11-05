@@ -14,7 +14,7 @@ https://deb.debian.org/debian/pool/main/t/twitter-bootstrap3/ . Archive, patch a
 pristine upstream source SHA256 values plus the upstream Git commit are recorded
 in `manifest.json`. Debian copyright/license information is retained here.
 
-`node build/patch-bootstrap.cjs` verifies the exact package version and source
+`node build/patch-bootstrap.cjs` verifies the exact package versions and source
 hashes, applies with zero fuzz, and regenerates both bundle forms. Known patched
 inputs are reversed and verified for idempotence; unexpected changes fail loudly.
 Writes happen only when bytes change, so the Bower watcher cannot loop on them.
@@ -29,3 +29,9 @@ https://security-tracker.debian.org/tracker/CVE-2025-1647 . GitHub advisories st
 refer to the original upstream version because no public upstream release was
 published; the local backport is explicit rather than a claim of version-level
 remediation.
+
+The explicit Bower `bootstrap` 3.4.1 dependency satisfies bootstrap-select's
+resolution; application pages load the bootstrap-sass bundle. Its plugin and
+bundle bytes have the same reviewed pristine SHA256 values and are patched too,
+so the installed nonexecuting copy is not left vulnerable. Both copies receive
+the same browser payload and idempotence/tamper tests.

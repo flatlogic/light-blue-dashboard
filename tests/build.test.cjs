@@ -60,29 +60,30 @@ test('binary images and fonts retain bytes and CSS assets resolve', () => {
   }
 })
 
-test('Bootstrap backports are idempotent and reject changed inputs', async (context) => {
-  const dir = fs.mkdtempSync(path.join(process.cwd(), '.bootstrap-patch-'))
-  context.after(() => fs.rmSync(dir, { recursive: true, force: true }))
-  const source = 'bower_components/bootstrap-sass'
-  const files = [
-    'package.json',
-    'assets/javascripts/bootstrap.js',
-    'assets/javascripts/bootstrap.min.js',
-    'assets/javascripts/bootstrap/button.js',
-    'assets/javascripts/bootstrap/tooltip.js'
-  ]
-  for (const file of files) {
-    fs.mkdirSync(path.dirname(path.join(dir, file)), { recursive: true })
-    fs.copyFileSync(path.join(source, file), path.join(dir, file))
+test('Bootstrap backports are idempotent and reject changed inputs in both packages', async (context) => {
+  for (const name of ['bootstrap-sass', 'bootstrap']) {
+    const dir = fs.mkdtempSync(path.join(process.cwd(), '.bootstrap-patch-'))
+    context.after(() => fs.rmSync(dir, { recursive: true, force: true }))
+    const source = 'bower_components/' + name
+    const distribution = name === 'bootstrap'
+    const bundle = distribution ? 'dist/js/bootstrap' : 'assets/javascripts/bootstrap'
+    const plugin = distribution ? 'js/button.js' : 'assets/javascripts/bootstrap/button.js'
+    const tooltip = distribution ? 'js/tooltip.js' : 'assets/javascripts/bootstrap/tooltip.js'
+    const files = ['package.json', bundle + '.js', bundle + '.min.js', plugin, tooltip]
+    for (const file of files) {
+      fs.mkdirSync(path.dirname(path.join(dir, file)), { recursive: true })
+      fs.copyFileSync(path.join(source, file), path.join(dir, file))
+    }
+    await patchBootstrap(dir)
+    const before = files.map((file) => fs.readFileSync(path.join(dir, file)))
+    await patchBootstrap(dir)
+    for (const [index, file] of files.entries()) {
+      assert.deepEqual(fs.readFileSync(path.join(dir, file)), before[index])
+    }
+    fs.appendFileSync(path.join(dir, plugin), '\n// Unexpected source change\n')
+    await assert.rejects(patchBootstrap(dir), /input mismatch|unexpected changes/)
+    fs.copyFileSync(path.join(source, plugin), path.join(dir, plugin))
+    fs.appendFileSync(path.join(dir, bundle + '.min.js'), '\n// Unexpected bundle change\n')
+    await assert.rejects(patchBootstrap(dir), /input mismatch/)
   }
-  const before = files.map((file) => fs.readFileSync(path.join(dir, file)))
-  await patchBootstrap(dir)
-  for (const [index, file] of files.entries()) {
-    assert.deepEqual(fs.readFileSync(path.join(dir, file)), before[index])
-  }
-  fs.appendFileSync(path.join(dir, files[3]), '\n// Unexpected source change\n')
-  await assert.rejects(patchBootstrap(dir), /input mismatch|unexpected changes/)
-  fs.copyFileSync(path.join(source, files[3]), path.join(dir, files[3]))
-  fs.appendFileSync(path.join(dir, files[2]), '\n// Unexpected bundle change\n')
-  await assert.rejects(patchBootstrap(dir), /input mismatch/)
 })

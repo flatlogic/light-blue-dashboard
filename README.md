@@ -122,7 +122,8 @@ Bootstrap 3 is end of life. The `bootstrap-sass` 3.4.3 wrapper embeds Bootstrap
 and [the data-loading-text advisory](https://github.com/advisories/GHSA-vxmc-5x29-h64v).
 Exact source and patch checksums, provenance, and the fail-fast apply step are
 recorded in [build/bootstrap-patches](build/bootstrap-patches/README.md). Both raw
-and minified bundles are patched. These local fixes do not change upstream
+and minified bundles in both bootstrap-sass and the nonexecuting Bootstrap
+resolution dependency are patched. These local fixes do not change upstream
 version metadata or make Bootstrap 3 supported; future advisories still require
 review. No advisory is dismissed or hidden.
 

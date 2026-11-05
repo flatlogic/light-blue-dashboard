@@ -29,8 +29,13 @@ async function writeChanged(filename, before, after) {
 
 async function patchBootstrap(directory = 'bower_components/bootstrap-sass') {
   const metadata = JSON.parse(await fs.readFile(path.join(directory, 'package.json'), 'utf8'))
-  if (metadata.name !== manifest.package || metadata.version !== manifest.version) {
-    throw new Error('Bootstrap patches require the reviewed bootstrap-sass ' + manifest.version)
+  const distribution = metadata.name === 'bootstrap'
+  const expectedPackage = distribution ? 'bootstrap' : manifest.package
+  const expectedVersion = distribution ? manifest.embeddedBootstrap : manifest.version
+  if (metadata.name !== expectedPackage || metadata.version !== expectedVersion) {
+    throw new Error(
+      'Bootstrap patches require the reviewed ' + expectedPackage + ' ' + expectedVersion
+    )
   }
   const entries = []
   for (const plugin of manifest.plugins) {
@@ -40,7 +45,8 @@ async function patchBootstrap(directory = 'bower_components/bootstrap-sass') {
     )
     verify(patchText, plugin.patchSha256, plugin.patch)
     const [patch] = parsePatch(patchText)
-    const filename = path.join(directory, 'assets/javascripts/bootstrap', plugin.name + '.js')
+    const pluginDirectory = distribution ? 'js' : 'assets/javascripts/bootstrap'
+    const filename = path.join(directory, pluginDirectory, plugin.name + '.js')
     const current = await fs.readFile(filename, 'utf8')
     let original = current
     if (sha256(current) !== plugin.sourceSha256) {
@@ -57,7 +63,10 @@ async function patchBootstrap(directory = 'bower_components/bootstrap-sass') {
     entries.push({ filename, current, original, patched })
   }
 
-  const bundleFile = path.join(directory, 'assets/javascripts/bootstrap.js')
+  const bundleFile = path.join(
+    directory,
+    distribution ? 'dist/js/bootstrap.js' : 'assets/javascripts/bootstrap.js'
+  )
   const currentBundle = await fs.readFile(bundleFile, 'utf8')
   let originalBundle = currentBundle
   if (originalBundle.startsWith(banner)) {
@@ -74,7 +83,7 @@ async function patchBootstrap(directory = 'bower_components/bootstrap-sass') {
   patchedBundle = banner + patchedBundle
   const minified = (await minify(patchedBundle, { format: { comments: /^!|@license|@preserve/ } }))
     .code
-  const minifiedFile = path.join(directory, 'assets/javascripts/bootstrap.min.js')
+  const minifiedFile = bundleFile.replace(/\.js$/, '.min.js')
   const currentMinified = await fs.readFile(minifiedFile, 'utf8')
   if (currentMinified !== minified) {
     verify(currentMinified, manifest.minifiedSha256, 'bootstrap.min.js')
@@ -87,10 +96,15 @@ async function patchBootstrap(directory = 'bower_components/bootstrap-sass') {
   await writeChanged(minifiedFile, currentMinified, minified)
 }
 
-module.exports = { patchBootstrap }
+async function patchInstalledBootstrap() {
+  await patchBootstrap()
+  await patchBootstrap('bower_components/bootstrap')
+}
+
+module.exports = { patchBootstrap, patchInstalledBootstrap }
 
 if (require.main === module) {
-  patchBootstrap(process.argv[2]).catch((error) => {
+  patchInstalledBootstrap().catch((error) => {
     console.error(error)
     process.exitCode = 1
   })
