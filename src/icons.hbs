@@ -1,8 +1,8 @@
 {{#extend "layout" title="Light Blue Dashboard - Icons"}}
-    {{#replace "sidebar"}}
-        {{> sidebar this conditionClass=conditionClass active="icons"}}
-    {{/replace}}
-    {{#replace "app_content"}}
+    {{#content "sidebar"}}
+        {{> sidebar this active="icons"}}
+    {{/content}}
+    {{#content "app_content"}}
         <h2 class="page-title">Icons <small>Large set of built-in icons</small></h2>
         <section class="widget widget-tabs icons-page">
             <header>
@@ -1410,10 +1410,10 @@
                 </div>
             </div>
         </section>
-    {{/replace}}
+    {{/content}}
 
-    {{#append "scripts"}}
+    {{#content "scripts" mode="append"}}
         <!-- page application js -->
         <!-- script src="js/ui-buttons.js"></script-->
-    {{/append}}
+    {{/content}}
 {{/extend}}

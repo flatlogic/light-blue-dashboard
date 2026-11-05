@@ -1,5 +1,5 @@
 {{#extend "layout" title="Light Blue Dashboard - Bootstrap Admin Template"}}
-    {{#replace "content"}}
+    {{#content "content"}}
         <div class="single-widget-container">
             <section class="widget login-widget">
                 <header class="text-align-center">
@@ -47,9 +47,9 @@
                 </footer>
             </section>
         </div>
-    {{/replace}}
+    {{/content}}
 
-    {{#append "scripts"}}
+    {{#content "scripts" mode="append"}}
 
-    {{/append}}
+    {{/content}}
 {{/extend}}

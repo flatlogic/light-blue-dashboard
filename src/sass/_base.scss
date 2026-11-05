@@ -988,7 +988,11 @@ $i: 1;
 }
 
 .pager .disabled button{
-  @extend .btn.disabled;
+  // Preserve the legacy compound extension without extending every .btn rule.
+  cursor: $cursor-disabled;
+  @include opacity(.65);
+  @include box-shadow(none);
+  color: $white;
 }
 
 /***********************************/

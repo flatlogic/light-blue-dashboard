@@ -1,8 +1,8 @@
 {{#extend "layout" title="Light Blue Dashboard - Tables"}}
-    {{#replace "sidebar"}}
-        {{> sidebar this conditionClass=conditionClass active="tables"}}
-    {{/replace}}
-    {{#replace "app_content"}}
+    {{#content "sidebar"}}
+        {{> sidebar this active="tables"}}
+    {{/content}}
+    {{#content "app_content"}}
         <h2 class="page-title">Tables - <span class="fw-semi-bold">Static</span></h2>
         <div class="row">
             <div class="col-md-12">
@@ -544,13 +544,13 @@
                 </section>
             </div>
         </div>
-    {{/replace}}
+    {{/content}}
 
-    {{#append "scripts"}}
+    {{#content "scripts" mode="append"}}
         <!-- page specific libs -->
         <script src="lib/jquery.sparkline/index.js"></script>
 
         <!-- page application js -->
         <script src="js/tables-static.js"></script>
-    {{/append}}
+    {{/content}}
 {{/extend}}

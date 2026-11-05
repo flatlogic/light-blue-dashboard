@@ -1,10 +1,10 @@
 {{#extend "layout" title="Light Blue Dashboard - Bootstrap Admin Template"}}
 
-{{#replace "sidebar"}}
-{{> sidebar this conditionClass=conditionClass active="index"}}
-{{/replace}}
+{{#content "sidebar"}}
+{{> sidebar this active="index"}}
+{{/content}}
 
-{{#replace "app_content"}}
+{{#content "app_content"}}
 <h2 class="page-title">Dashboard <small>Statistics and more</small></h2>
 <div class="row">
     <div class="col-lg-8">
@@ -603,9 +603,9 @@
         </section>
     </div>
 </div>
-{{/replace}}
+{{/content}}
 
-{{#append "scripts"}}
+{{#content "scripts" mode="append"}}
 <!-- page libs -->
 <script src="lib/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="lib/jquery.sparkline/index.js"></script>
@@ -638,6 +638,6 @@
                 </div>
             </div>
         </script>
-{{/append}}
+{{/content}}
 
 {{/extend}}
